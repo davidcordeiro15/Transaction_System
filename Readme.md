@@ -52,7 +52,6 @@ v0.58.0)
     Estão disponíveis os comandos GET e POST
 
     1. **Para iniciar uma Empresa**
-      
     Já dentro do Postaman, colocar o método POST, para iniciar uma empresa com o seguinte endereço:
         localhost:8080/Company/setCompany
        
@@ -71,7 +70,6 @@ v0.58.0)
     OBS: Ao realizarmos um GET com um CNPJ não cadastrado, o programa retorna um corpo vazio, indicando que não foi encontrado nenhuma empresa.
   
     2. **Para iniciar uma Conta**
-    3. 
     Definir como POST
 
     Escrever o seguinte endereço:
@@ -92,7 +90,6 @@ v0.58.0)
     OBS: Ao realizarmos um GET com um CNPJ não cadastrado, o programa retorna um corpo vazio, indicando que não foi encontrado nenhuma empresa.
   
     3. **Para iniciar uma Transação**
-    4. 
     Definir como POST
 
     Escrever o seguinte endereço:
@@ -108,6 +105,7 @@ v0.58.0)
     Com a criação da transação poderemos observar no site https://mailtrap.io/ que a transação foi realizada com sucesso a partir de um email enviado, registrado na transação. 
 
     Após isso mudar para GET
+  
     Colocar o seguinte endereço para observar todas as transações realizadas nesse CNPJ:
         localhost:8080/Transaction/getTransaction/12345678000200
     OBS: É possível realizar um POST com o mesmo corpo várias vezes, pois o conceito é ou criar uma conta, ou logar em uma, e o código utiliza o endereço para realizar os métodos.
