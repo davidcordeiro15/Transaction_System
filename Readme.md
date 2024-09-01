@@ -1,7 +1,7 @@
 # Projeto de Transações entre contas com Spring Boot 
 
 Este é um projeto que utiliza Spring Boot  para gerenciar informações de empresas e clientes. A aplicação permite a criação, consulta e gerenciamento de dados através de uma API RESTful.
-Essa aplicação foi idealizada para ser um servidor fictício Backend, ou seja, as contas e transações serão criadas a partir de requisições HTTP. Entretanto para permitir que a aplicação seja 100% funcional, seria apenas necessário implementar métodos de cybersegurança para uma transação segura e uma tela (Frontend) e conectar com o servidor. 
+Essa aplicação foi idealizada para ser um servidor fictício Backend, ou seja, as contas e transações serão criadas a partir de requisições HTTP. Entretanto, para permitir que a aplicação seja 100% funcional, seria apenas necessário implementar métodos de cybersegurança para uma transação segura, uma tela (Frontend) e conectar com o servidor. 
 O login e cadastro de contas foram pensados para serem dados (json) gerados a partir das requisições. 
 
 ## Funcionalidades
