@@ -10,6 +10,9 @@ O login e cadastro de contas foram pensados para serem dados (json) gerados a pa
 - **Consulta de Empresas:** Realiza consultas de empresas pelo CNPJ (para evitar expor dados de todas as empresas, cada empresa entraria com o seu CNPJ).
 - **Consulta de Clientes:** Realiza consultas de clientes pelo CPF (para evitar expor dados de todos clientes, cada cliente entraria com o seu CPF).
 
+## Arquitetura Básica:
+![transacao4](https://github.com/user-attachments/assets/65e267a4-6b21-4c45-ac37-2721aa35a1ba)
+
 ## Como Executar
 - **Tecnologias Necessárias:**
     É necessário ter o Java 8 (https://www.java.com/pt-BR/) baixado em seu computador e o JDK 22.0.2 (https://www.oracle.com/java/technologies/downloads/)
@@ -39,43 +42,34 @@ v0.58.0)
     Já dentro do Postaman, colocar o método POST, para iniciar uma empresa com o seguinte endereço:
         localhost:8080/Company/setCompany
     Corpo da mensagem:
-        {
-            "nameCompany": "Empresa_1",
-            "cnpjCompany": "12345678000200",
-            "balanceCompany": 1000.0,
-            "emailCompany": "teste@gmail.com"
-        }
+        ![transacao1](https://github.com/user-attachments/assets/59f6d331-f417-45a9-b482-271c4ece3782)
     Após isso colocar GET, com o seguinte endereço:
         localhost:8080/Company/getCompany/12345678000200 
-    Note que o endereço final deve ser exatamente o cnpj da empresa já postada 
-    Note também que deve ser apenas numeros
-    OBS: É possível realizar um POST com o mesmo corpo várias vezes, pois o conceito é ou criar uma conta, ou logar em uma, e o código utiliza o endereço para realizar os métodos
+    Note que o endereço final deve ser exatamente o cnpj da empresa já postada.
+
+    Note também que deve ser apenas numeros.
+  
+    OBS: É possível realizar um POST com o mesmo corpo várias vezes, pois o conceito é ou criar uma conta, ou logar em uma, e o código utiliza o endereço para realizar os métodos.
+  
     2. **Para iniciar uma Conta**
     Definir como POST
     Escrever o seguinte endereço:
         localhost:8080/Company/setClient
     No corpo da mensagem: 
-        {
-            "nameClient": "Cliente_1",
-            "cpfClient": "12345678912"
-        }
+        ![transacao2](https://github.com/user-attachments/assets/5f3273c1-857a-4d7b-92a8-7a4c6379db94)
     
     Após isso colocar GET, com o seguinte endereço: 
         localhost:8080/Company/getClient/12345678912
-    Note que o endereço final deve ser exatamente o cpf da empresa já postada 
-    Note também que deve ser apenas numeros
+    Note que o endereço final deve ser exatamente o cpf da empresa já postada.
+  
+    Note também que deve ser apenas numeros.
 
     3. **Para iniciar uma Transação**
     Definir como POST
     Escrever o seguinte endereço: 
     localhost:8080/Transaction/postTransaction
     No corpo da mensagem:
-        {
-            "cnpjTransaction":"12345678000200",
-            "cpfTransaction": "12345678912",
-            "value": -100, 
-            "emailTransaction": "teste@gmail.com"
-        }
+        ![transacao3](https://github.com/user-attachments/assets/cc41daa3-1df0-4773-925b-5d14118446e1)
     Note que o valor é negativo, ou seja será um saque a partir da empresa registrada naquele CNPJ. 
     Para realizar um depósito é só colocar um valor positivo. 
 
