@@ -17,14 +17,18 @@ O login e cadastro de contas foram pensados para serem dados (json) gerados a pa
 ## Como Executar
 - **Tecnologias Necessárias:**
     É necessário ter o Java 8 (https://www.java.com/pt-BR/) baixado em seu computador e o JDK 22.0.2 (https://www.oracle.com/java/technologies/downloads/)
+  
     Alguma IDE que rode Java, no caso do vscode com as extensões de java instaladas (Debugger for Java
 v0.58.0)
     Algum programa que faça requisições HTTP, por exemplo o https://www.postman.com/
 
 - **Envio de Email:** 
     Primeiro terá que entrar ou criar uma conta no site https://mailtrap.io/ para testar a conexão do email
+  
     No canto esquerdo entrar na aba "Email Testing"
+  
     No meio da tela clicar em "My inbox"
+  
     Copiar as informações geradas no arquivo application.properties, assim como abaixo:
     
   
@@ -41,49 +45,66 @@ v0.58.0)
     spring.mail.properties.mail.sntp.starttls.enable=true
   
     Após isso o código estará pronto para mandar emails.
+  
 - **Rodar:** 
     Entrar no arquivo TransactionSystemApplication.java e rodá-lo 
 
-- **Acessa a API** 
+- **Acessa a API**
+- 
     Estão disponíveis os comandos GET e POST
 
     1. **Para iniciar uma Empresa**
+    2. 
     Já dentro do Postaman, colocar o método POST, para iniciar uma empresa com o seguinte endereço:
+
         localhost:8080/Company/setCompany
+       
     Corpo da mensagem:
         ![transacao1](https://github.com/user-attachments/assets/59f6d331-f417-45a9-b482-271c4ece3782)
     Após isso colocar GET, com o seguinte endereço:
-        localhost:8080/Company/getCompany/12345678000200 
+        localhost:8080/Company/getCompany/12345678000200
+  
     Note que o endereço final deve ser exatamente o cnpj da empresa já postada.
 
     Note também que deve ser apenas numeros.
   
     OBS: É possível realizar um POST com o mesmo corpo várias vezes, pois o conceito é ou criar uma conta, ou logar em uma, e o código utiliza o endereço para realizar os métodos.
   
-    OBS: Ao realizarmos um GET com um CNPJ não cadastrado, o programa retorna um corpo vazio, indicando que não foi encontrado nenhuma empresa. 
+    OBS: Ao realizarmos um GET com um CNPJ não cadastrado, o programa retorna um corpo vazio, indicando que não foi encontrado nenhuma empresa.
+  
     2. **Para iniciar uma Conta**
+    3. 
     Definir como POST
+
     Escrever o seguinte endereço:
         localhost:8080/Company/setClient
+  
     No corpo da mensagem: 
         ![transacao2](https://github.com/user-attachments/assets/5f3273c1-857a-4d7b-92a8-7a4c6379db94)
     
     Após isso colocar GET, com o seguinte endereço: 
         localhost:8080/Company/getClient/12345678912
+  
     Note que o endereço final deve ser exatamente o cpf da empresa já postada.
   
     Note também que deve ser apenas numeros.
+  
     OBS: É possível realizar um POST com o mesmo corpo várias vezes, pois o conceito é ou criar uma conta, ou logar em uma, e o código utiliza o endereço para realizar os métodos.
   
     OBS: Ao realizarmos um GET com um CNPJ não cadastrado, o programa retorna um corpo vazio, indicando que não foi encontrado nenhuma empresa.
   
     3. **Para iniciar uma Transação**
+    4. 
     Definir como POST
-    Escrever o seguinte endereço: 
+
+    Escrever o seguinte endereço:
     localhost:8080/Transaction/postTransaction
+  
     No corpo da mensagem:
         ![transacao3](https://github.com/user-attachments/assets/cc41daa3-1df0-4773-925b-5d14118446e1)
-    Note que o valor é negativo, ou seja será um saque a partir da empresa registrada naquele CNPJ. 
+    
+    Note que o valor é negativo, ou seja será um saque a partir da empresa registrada naquele CNPJ.
+  
     Para realizar um depósito é só colocar um valor positivo. 
     
     Com a criação da transação poderemos observar no site https://mailtrap.io/ que a transação foi realizada com sucesso a partir de um email enviado, registrado na transação. 
