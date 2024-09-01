@@ -59,6 +59,7 @@ v0.58.0)
     Note também que deve ser apenas numeros.
   
     OBS: É possível realizar um POST com o mesmo corpo várias vezes, pois o conceito é ou criar uma conta, ou logar em uma, e o código utiliza o endereço para realizar os métodos.
+  
     OBS: Ao realizarmos um GET com um CNPJ não cadastrado, o programa retorna um corpo vazio, indicando que não foi encontrado nenhuma empresa. 
     2. **Para iniciar uma Conta**
     Definir como POST
@@ -73,6 +74,7 @@ v0.58.0)
   
     Note também que deve ser apenas numeros.
     OBS: É possível realizar um POST com o mesmo corpo várias vezes, pois o conceito é ou criar uma conta, ou logar em uma, e o código utiliza o endereço para realizar os métodos.
+  
     OBS: Ao realizarmos um GET com um CNPJ não cadastrado, o programa retorna um corpo vazio, indicando que não foi encontrado nenhuma empresa.
   
     3. **Para iniciar uma Transação**
@@ -90,6 +92,7 @@ v0.58.0)
     Colocar o seguinte endereço para observar todas as transações realizadas nesse CNPJ:
         localhost:8080/Transaction/getTransaction/12345678000200
     OBS: É possível realizar um POST com o mesmo corpo várias vezes, pois o conceito é ou criar uma conta, ou logar em uma, e o código utiliza o endereço para realizar os métodos.
+  
     OBS: Ao realizarmos um GET com um CNPJ não cadastrado, o programa retorna um corpo vazio, indicando que não foi encontrado nenhuma empresa.
   
 Sinta-se a vontade para contribuir com o código!
