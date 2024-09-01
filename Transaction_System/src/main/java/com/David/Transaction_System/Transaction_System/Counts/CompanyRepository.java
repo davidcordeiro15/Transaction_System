@@ -23,8 +23,12 @@ public class CompanyRepository {
         // Encontrar a empresa com o CNPJ correspondente
         for (Company company : companies) {
             if (company.getCnpjCompany().equals(cnpj)) {
-                // Atualizar o balanço da empresa
-                company.setBalanceCompany(company.getBalanceCompany() + value);
+                // Atualizar o balanço da empresa, já com a taxa de 5% do sistema
+                if (value>0){
+                    company.setBalanceCompany(company.getBalanceCompany() + value - value*0.05);
+                } else {
+                    company.setBalanceCompany(company.getBalanceCompany() + value + value*0.05);
+                }
                 return; // Encerra o método após encontrar e atualizar a empresa
             }
         }
