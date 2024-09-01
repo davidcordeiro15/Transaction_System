@@ -9,6 +9,7 @@ O login e cadastro de contas foram pensados para serem dados (json) gerados a pa
 - **Cadastro de Clientes:** Permite o cadastro de clientes.
 - **Consulta de Empresas:** Realiza consultas de empresas pelo CNPJ (para evitar expor dados de todas as empresas, cada empresa entraria com o seu CNPJ).
 - **Consulta de Clientes:** Realiza consultas de clientes pelo CPF (para evitar expor dados de todos clientes, cada cliente entraria com o seu CPF).
+- **Taxa do Sistema**: O sistema inclui automaticamente uma taxa para cada transação de 5% do valor. 
 
 ## Arquitetura Básica:
 ![transacao4](https://github.com/user-attachments/assets/65e267a4-6b21-4c45-ac37-2721aa35a1ba)
@@ -58,7 +59,7 @@ v0.58.0)
     Note também que deve ser apenas numeros.
   
     OBS: É possível realizar um POST com o mesmo corpo várias vezes, pois o conceito é ou criar uma conta, ou logar em uma, e o código utiliza o endereço para realizar os métodos.
-  
+    OBS: Ao realizarmos um GET com um CNPJ não cadastrado, o programa retorna um corpo vazio, indicando que não foi encontrado nenhuma empresa. 
     2. **Para iniciar uma Conta**
     Definir como POST
     Escrever o seguinte endereço:
@@ -71,7 +72,9 @@ v0.58.0)
     Note que o endereço final deve ser exatamente o cpf da empresa já postada.
   
     Note também que deve ser apenas numeros.
-
+    OBS: É possível realizar um POST com o mesmo corpo várias vezes, pois o conceito é ou criar uma conta, ou logar em uma, e o código utiliza o endereço para realizar os métodos.
+    OBS: Ao realizarmos um GET com um CNPJ não cadastrado, o programa retorna um corpo vazio, indicando que não foi encontrado nenhuma empresa.
+  
     3. **Para iniciar uma Transação**
     Definir como POST
     Escrever o seguinte endereço: 
@@ -80,11 +83,13 @@ v0.58.0)
         ![transacao3](https://github.com/user-attachments/assets/cc41daa3-1df0-4773-925b-5d14118446e1)
     Note que o valor é negativo, ou seja será um saque a partir da empresa registrada naquele CNPJ. 
     Para realizar um depósito é só colocar um valor positivo. 
-
+    
     Com a criação da transação poderemos observar no site https://mailtrap.io/ que a transação foi realizada com sucesso a partir de um email enviado, registrado na transação. 
 
     Após isso mudar para GET
     Colocar o seguinte endereço para observar todas as transações realizadas nesse CNPJ:
         localhost:8080/Transaction/getTransaction/12345678000200
-    
+    OBS: É possível realizar um POST com o mesmo corpo várias vezes, pois o conceito é ou criar uma conta, ou logar em uma, e o código utiliza o endereço para realizar os métodos.
+    OBS: Ao realizarmos um GET com um CNPJ não cadastrado, o programa retorna um corpo vazio, indicando que não foi encontrado nenhuma empresa.
+  
 Sinta-se a vontade para contribuir com o código!
