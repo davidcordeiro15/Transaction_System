@@ -25,13 +25,13 @@ v0.58.0)
     No canto esquerdo entrar na aba "Email Testing"
     No meio da tela clicar em "My inbox"
     Copiar as informações geradas no arquivo application.properties, assim como abaixo:
-  
-    spring.mail.host=sandbox.smtp.mailtrap.io
-    spring.mail.port=587
-    spring.mail.username= (seu username gerado no site)
-    spring.mail.password= (sua senha gerada no site)
-    spring.mail.properties.mail.sntp.auth=true
-    spring.mail.properties.mail.sntp.starttls.enable=true
+    (Porfavor, esvre o código sem o ponto final, pois ele é apenas para vizualização facilitado do arquivo Readme.md)
+    spring.mail.host=sandbox.smtp.mailtrap.io .
+    spring.mail.port=587 .
+    spring.mail.username= (seu username gerado no site) .
+    spring.mail.password= (sua senha gerada no site) .
+    spring.mail.properties.mail.sntp.auth=true .
+    spring.mail.properties.mail.sntp.starttls.enable=true .
   
     Após isso o código estará pronto para mandar emails.
 - **Rodar:** 
