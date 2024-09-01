@@ -1,5 +1,4 @@
 # Projeto de Transações entre contas com Spring Boot 
-
 Este é um projeto que utiliza Spring Boot  para gerenciar informações de empresas e clientes. A aplicação permite a criação, consulta e gerenciamento de dados através de uma API RESTful.
 Essa aplicação foi idealizada para ser um servidor fictício Backend, ou seja, as contas e transações serão criadas a partir de requisições HTTP. Entretanto, para permitir que a aplicação seja 100% funcional, seria apenas necessário implementar métodos de cybersegurança para uma transação segura, uma tela (Frontend) e conectar com o servidor. 
 O login e cadastro de contas foram pensados para serem dados (json) gerados a partir das requisições. 
@@ -50,18 +49,17 @@ v0.58.0)
     Entrar no arquivo TransactionSystemApplication.java e rodá-lo 
 
 - **Acessa a API**
-- 
     Estão disponíveis os comandos GET e POST
 
     1. **Para iniciar uma Empresa**
-    2. 
+      
     Já dentro do Postaman, colocar o método POST, para iniciar uma empresa com o seguinte endereço:
-
         localhost:8080/Company/setCompany
        
     Corpo da mensagem:
         ![transacao1](https://github.com/user-attachments/assets/59f6d331-f417-45a9-b482-271c4ece3782)
-    Após isso colocar GET, com o seguinte endereço:
+
+  Após isso colocar GET, com o seguinte endereço:
         localhost:8080/Company/getCompany/12345678000200
   
     Note que o endereço final deve ser exatamente o cnpj da empresa já postada.
